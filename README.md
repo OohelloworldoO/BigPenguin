@@ -1,7 +1,7 @@
 網頁製作、後端nodejs串接mongoDB進行使用者登入、認證    
 用於醫療紀錄以及使用者feedback  
 (css無法在github上連結到 可在vs code運行)  
-遇到的問題:session無法rwd、isAuth無法正常運行、還有res.direct的問題(後來改用res.readfile直接傳就解決了)，但還是要設定最初讀取路徑  
+遇到的問題:session無法rwd、isAuth無法正常運行、還有res.direct的問題(後來改用res.readfile直接傳就解決了)，但還是要設定最初讀取路徑等等  
 <br>
 <br>
 <br>

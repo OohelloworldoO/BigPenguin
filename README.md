@@ -2,6 +2,8 @@
 用於醫療紀錄以及使用者feedback
 (css無法在github上連結到 可在vs code運行)
 
+
+主要的參考資料如下:  
 參考資料:https://webninjadeveloper.com/nodejs/node-js-express-session-based-authentication-system-using-express-session-cookie-parser-in-mongodb/  
 參考資料:https://andyyou.github.io/2017/04/11/express-passport/  
 參考資料:https://www.makeuseof.com/user-authentication-in-nodejs/
@@ -11,5 +13,9 @@
 參考資料:https://ithelp.ithome.com.tw/articles/10243819  
 參考資料:https://ithelp.ithome.com.tw/articles/10228464  
 參考資料:https://saasbase.dev/blog/building-an-authentication-system-using-passport-js-node-js-and-mongodb-part-1-google-login  
-參考資料:
-參考資料:
+參考資料:https://www.youtube.com/watch?v=RGJ8Geq3tGU&list=PL2EvjydS1n0t2vvfrOJJ6OxN7HqWNqC5p&index=2&ab_channel=Inform%C3%A1ticaDP  
+參考資料:https://www.youtube.com/watch?v=-RCnNyD0L-s&list=PL2EvjydS1n0t2vvfrOJJ6OxN7HqWNqC5p&index=4&t=1331s&ab_channel=WebDevSimplified  
+參考資料:https://www.youtube.com/watch?v=iVt1ElToqHo&list=PL2EvjydS1n0t2vvfrOJJ6OxN7HqWNqC5p&index=10&t=88s&ab_channel=OnlineTutorials  
+參考資料:https://www.youtube.com/watch?v=344Zv2m9TYI&list=PL2EvjydS1n0t2vvfrOJJ6OxN7HqWNqC5p&index=15&t=166s&ab_channel=TheFullStackJunkie  
+參考資料:https://www.youtube.com/watch?v=nu_pCVPKzTk&list=PL2EvjydS1n0t2vvfrOJJ6OxN7HqWNqC5p&index=17&t=21883s&ab_channel=freeCodeCamp.org  
+參考資料:https://www.youtube.com/watch?v=S1Wq_XHw6Qo&list=PL2EvjydS1n0t2vvfrOJJ6OxN7HqWNqC5p&index=18&t=738s&ab_channel=HarunurRoshid  

@@ -8,6 +8,7 @@
 <br>
 <br>
 ## 主要的參考資料如下:  
+(做完後才發現用react、vue做前端好像更好，因為很多範例都不是用.html 導致遇到很多問題，所以下次試著用這些寫程式)
  參考資料:https://webninjadeveloper.com/nodejs/node-js-express-session-based-authentication-system-using-express-session-cookie-parser-in-mongodb/  <br>
  參考資料:https://andyyou.github.io/2017/04/11/express-passport/  <br>
  參考資料:https://www.makeuseof.com/user-authentication-in-nodejs/  <br>

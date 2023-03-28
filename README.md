@@ -1,9 +1,8 @@
 # 紀錄一下遇到的問題跟解決方法:
 (我感覺才剛做完一個禮拜就快忘了當初怎麼做的了，所以記錄一下怎麼思考、解決的) 
 
-網頁製作、後端nodejs串接mongoDB進行使用者登入、認證    
-用於醫療紀錄以及使用者feedback  
-(css無法在github上連結到 可在vs code運行)  
+網頁前端製作、後端nodejs串接mongoDB進行使用者登入、認證(未來還想再加po文、查詢資料等等)    
+用於醫療紀錄以及使用者feedback(不知為啥css無法在github上連結到 但可在vs code運行成功)  
 遇到的問題:session無法rwd、isAuth無法正常運行、還有res.direct的問題(後來改用res.readfile直接傳就解決了)，但還是要設定最初讀取路徑等等  
 <br>
 <br>

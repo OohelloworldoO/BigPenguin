@@ -7,16 +7,26 @@
 <br>
 <br>  
 -----
-需要裝的套件:  
+有安裝的套件:  
 <br>  
-bcrypt  
-express  
-expressflash  
-express-session  
-mongoose  
-passport  
-passport-local  
-chatjs-plugin-datalabels  
+├── bcrypt-nodejs@0.0.3  
+├── bcrypt@5.1.0  
+├── bcryptjs@2.4.3  
+├── body-parser@1.20.2  
+├── chartjs-plugin-datalabels@2.2.0  
+├── connect-mongodb-session@3.1.1  
+├── dotenv@16.0.3  
+├── ejs@3.1.9  
+├── express-flash@0.0.2  
+├── express-session@1.17.3  
+├── express@4.18.2  
+├── method-override@3.0.0  
+├── mongoose@7.0.0  
+├── nodemon@2.0.21  
+├── passport-local@1.0.0  
+├── passport@0.6.0  
+├── path@0.12.7  
+└── popups@1.1.3  
 <br>  
 ------
 <br>

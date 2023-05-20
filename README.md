@@ -24,4 +24,7 @@
  參考資料:https://www.youtube.com/watch?v=iVt1ElToqHo&list=PL2EvjydS1n0t2vvfrOJJ6OxN7HqWNqC5p&index=10&t=88s&ab_channel=OnlineTutorials  <br>
  參考資料:https://www.youtube.com/watch?v=344Zv2m9TYI&list=PL2EvjydS1n0t2vvfrOJJ6OxN7HqWNqC5p&index=15&t=166s&ab_channel=TheFullStackJunkie  <br>
  參考資料:https://www.youtube.com/watch?v=nu_pCVPKzTk&list=PL2EvjydS1n0t2vvfrOJJ6OxN7HqWNqC5p&index=17&t=21883s&ab_channel=freeCodeCamp.org  <br>
- 參考資料:https://www.youtube.com/watch?v=S1Wq_XHw6Qo&list=PL2EvjydS1n0t2vvfrOJJ6OxN7HqWNqC5p&index=18&t=738s&ab_channel=HarunurRoshid  <br>
+ 參考資料:https://www.youtube.com/watch?v=S1Wq_XHw6Qo&list=PL2EvjydS1n0t2vvfrOJJ6OxN7HqWNqC5p&index=18&t=738s&ab_channel=HarunurRoshid  <br>  
+ 參考資料:[https://www.youtube.com/watch?v=S1Wq_XHw6Qo&list=PL2EvjydS1n0t2vvfrOJJ6OxN7HqWNqC5p&index=18&t=738s&ab_channel=HarunurRoshid](https://www.youtube.com/watch?v=9YxgKmO-Rlw&list=PL2EvjydS1n0t2vvfrOJJ6OxN7HqWNqC5p&index=35&ab_channel=CalebCurry)  <br>  
+ 參考資料:[[https://www.youtube.com/watch?v=S1Wq_XHw6Qo&list=PL2EvjydS1n0t2vvfrOJJ6OxN7HqWNqC5p&index=18&t=738s&ab_channel=HarunurRoshid](https://www.youtube.com/watch?v=9YxgKmO-Rlw&list=PL2EvjydS1n0t2vvfrOJJ6OxN7HqWNqC5p&index=35&ab_channel=CalebCurry) ](https://www.youtube.com/watch?v=5TxF9PQaq4U&list=PL2EvjydS1n0t2vvfrOJJ6OxN7HqWNqC5p&index=34&t=658s&ab_channel=Smoljames) <br>  
+ 參考資料:[https://www.youtube.com/watch?v=S1Wq_XHw6Qo&list=PL2EvjydS1n0t2vvfrOJJ6OxN7HqWNqC5p&index=18&t=738s&ab_channel=HarunurRoshid](https://www.youtube.com/watch?v=W1Kttu53qTg&list=PL2EvjydS1n0t2vvfrOJJ6OxN7HqWNqC5p&index=31&t=6667s&ab_channel=DailyTuition)  <br> 

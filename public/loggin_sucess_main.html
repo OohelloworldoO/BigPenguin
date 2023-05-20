@@ -131,6 +131,23 @@ body.dark{
     color: #fff;
 }
 
+.sidebar .personal{
+    transition: var(--tran-05);
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #fff;
+    height: 100%;
+    width: 250px;
+    text-align: left;
+}
+
+.personal:hover{
+    cursor: pointer;
+    background: var(--primary-color);
+    color: #fff;
+}
+
 
 /*reusebal css*/
 .sidebar.close .text{
@@ -147,6 +164,12 @@ body.dark{
 }
 
 .sidebar.close .loggout{
+    transition: var(--tran-05);
+    white-space: nowrap;
+    opacity: 0;
+}
+
+.sidebar.close .personal{
     transition: var(--tran-05);
     white-space: nowrap;
     opacity: 0;
@@ -288,7 +311,17 @@ body.dark .loggout{
     color: var(--text-color);
 }
 
+body.dark .personal{
+    background-color: var(--sidebar-color);
+    color: var(--text-color);
+}
+
 body.dark .loggout:hover{
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+body.dark .personal:hover{
     background-color: var(--primary-color);
     color: var(--text-color);
 }
@@ -408,6 +441,63 @@ body.dark .switch::before{
     display: flex;
 }
 
+
+
+* {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .chartMenu {
+        width: 100vw;
+        height: 40px;
+        background: #1A1A1A;
+        color: rgba(54, 162, 235, 1);
+      }
+      .chartMenu p {
+        padding: 10px;
+        font-size: 20px;
+      }
+      .chartCard {
+        width: 90vw;
+        height: calc(100vh - 40px);
+        background: rgba(54, 162, 235, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .chartBox {
+        width: 1000px;
+        padding: 20px;
+        border-radius: 20px;
+        border: solid 3px rgba(54, 162, 235, 1);
+        background: white;
+      }
+
+.select{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-width: 250px;
+    height: 50px;
+    border-radius: 25px;
+}
+.select-box{
+    border: none;
+    appearance: none;
+    padding: 0 30px 0 15px;
+    width: 150px;
+    color: white;
+    background-color: #7674ed;
+    font-size: 20px;
+    border-radius: 3px;
+}
+.select :hover{
+    background-color: #0e0af1;
+    transition: 1s ease;
+}
+
+
 </style>
 
 </head>
@@ -460,13 +550,24 @@ body.dark .switch::before{
                         </a>
                     </li>
 
-                    <li class="nav_link">
-                        <a >
-                            <i class='bx bx-book-content icons'></i>
-                            <span class="text nav_text">查詢資料</span>
-                        </a>
-                    </li>
+                    <form action="/suggestion" method="get">
+                        <li class="nav_link">
+                            <a>
+                                <i class='bx bx-book-content icons'></i>
+                                <button class="personal">查詢資料</button>
+                            </a>
+                        </li>
+                    </form>
 
+                    <form action="/personal" method="get">
+                        <li class="nav_link">
+                            <a >
+                                <i class='bx bx-wink-smile icons'></i>
+                                <button class="personal">個人資料</button>
+                            </a>
+                        </li>
+                    </form>
+                    
                     <li class="nav_link">
                         <a href="#feedback">
                             <i class='bx bxs-edit-alt icons'></i>
@@ -475,12 +576,6 @@ body.dark .switch::before{
                         </a>
                     </li>
 
-                    <li class="nav_link">
-                        <a href="#teamates">
-                            <i class='bx bx-wink-smile icons'></i>
-                            <span class="text nav_text">人員介紹</span>
-                        </a>
-                    </li>
 
                     <form action="/loggout" method="post">
                         <li class="nav_link">
@@ -523,524 +618,32 @@ body.dark .switch::before{
         <div class="h1_text">
             <h1 >國立金門大學</h1>
 
-            <div class="main_content">
-                <div class="welcome-area" id="welcome">
-
-                    <!-- ***** Header Text Start ***** -->
-                    <div class="header-text">
-                        <div class="container">
-                            <div class="row">
-                                <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
-                                    <h1>:<strong>歧黃妙訣</strong><br>快點讓我們拿冠軍</h1>
-                                    <p>我們立志於使用人工智慧 讓醫學知識更加普及</p>
-                                    <a href="#features" class="main-button-slider">探索更多</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ***** Header Text End ***** -->
+            <div class="main_content">         
+     
+                <div class="select">
+                    <select onchange="updateChart()" id="idforValue" class="select-box">
+                        <option value="heatstroke">中暑</option>
+                        <option value="Headache">頭痛</option>
+                        <option value="Mouthpain">口痛</option>
+                        <option value="influenza">流行性感冒</option>
+                        <option value="stuffynose">鼻塞</option>
+                        <option value="dizziness">眩暈</option>
+                        <option value="cold">感冒</option>
+                        <option value="fingernumbness">手指麻木</option>
+                        <option value="Insomnia">失眠</option>
+                        <option value="Fatigue">疲勞乏力</option>
+                        <option value="lossofappetite">食慾減退</option>
+                        <option value="Fever">煩熱</option>
+                    </select>
                 </div>
-                <!-- ***** Welcome Area End ***** -->
-            
-                <!-- ***** Features Small Start ***** -->
-                <section class="section home-feature">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="row">
-                                    <!-- ***** Features Small Item Start ***** -->
-                                    <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
-                                        <div class="features-small-item">
-                                            <div class="icon">
-                                                <i><img src="assets/images/featured-item-01.png" alt=""></i>
-                                            </div>
-                                            <h5 class="features-title">人工智慧</h5>
-                                            <p>由人工智慧為你量身定點穴位</p>
-                                        </div>
-                                    </div>
-                                    <!-- ***** Features Small Item End ***** -->
-            
-                                    <!-- ***** Features Small Item Start ***** -->
-                                    <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
-                                        <div class="features-small-item">
-                                            <div class="icon">
-                                                <i><img src="assets/images/featured-item-01.png" alt=""></i>
-                                            </div>
-                                            <h5 class="features-title">資療保健</h5>
-                                            <p>你也可以當自己的中醫</p>
-                                        </div>
-                                    </div>
-                                    <!-- ***** Features Small Item End ***** -->
-            
-                                    <!-- ***** Features Small Item Start ***** -->
-                                    <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
-                                        <div class="features-small-item">
-                                            <div class="icon">
-                                                <i><img src="assets/images/featured-item-01.png" alt=""></i>
-                                            </div>
-                                            <h5 class="features-title">隨時</h5>
-                                            <p>只要在鏡子前，即可隨時瞭解更多</p>
-                                        </div>
-                                    </div>
-                                    <!-- ***** Features Small Item End ***** -->
-                                </div>
-                            </div>
-                        </div>
+                <div class="chartCard">
+                    <div class="chartBox">
+                      <canvas id="myChart"></canvas>
+                      <button></button>
                     </div>
-                </section>
-                <!-- ***** Features Small End ***** -->
-            
-                <!-- ***** Features Big Item Start ***** -->
-                <section class="section padding-top-70 padding-bottom-0" id="features">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-5 col-md-12 col-sm-12 align-self-center" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                                <img src="assets/images/left-image.png" class="rounded img-fluid d-block mx-auto" alt="App">
-                            </div>
-                            <div class="col-lg-1"></div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-top-fix">
-                                <div class="left-heading">
-                                    <h2 class="section-title">構想由來</h2>
-                                </div>
-                                <div class="left-text">
-                                    <p>為甚麼要做這個app呢?前陣子疫情非常嚴重，導致醫療量能嚴重不足，病人無法及時獲得醫療救助，而後才出現了線上看診的方式。<br>
-                                    我們發現，許多人生了小病都會選擇在家靜養，為了因應此狀況，我們實現了在家裡也能透過手部穴位按摩、舒緩症狀的app</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="hr"></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- ***** Features Big Item End ***** -->
-            
-                <!-- ***** Features Big Item Start ***** -->
-                <section class="section padding-bottom-100">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-bottom-fix">
-                                <div class="left-heading">
-                                    <h2 class="section-title">效益</h2>
-                                </div>
-                                <div class="left-text">
-                                    <p>穴道按摩是保養身體、或著舒緩症狀的方式之一，有很多能夠協助治癒疾病的特效穴位，促進人體自愈。<br>
-                                        但穴位資訊竹繁不及備載，初學者很難在書海中找到所有有效穴位<br>
-                                        我們希望透過這款app達到使用者一眼即可找到穴位位置、以及按壓力度
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-1"></div>
-                            <div class="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-                                <img src="assets/images/right-image.png" class="rounded img-fluid d-block mx-auto" alt="App">
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- ***** Features Big Item End ***** -->
-            
-                <!-- ***** Home Parallax Start ***** -->
-                <section class="mini" id="work-process">
-                    <div class="mini-content">
-                        <div class="container">
-                            <div class="row">
-                                <div class="offset-lg-3 col-lg-6">
-                                    <div class="info">
-                                        <h1>關於更多:</h1>
-                                        <p>產品架構如何運作</p>
-                                    </div>
-                                </div>
-                            </div>
-            
-                            <!-- ***** Mini Box Start ***** -->
-                            <div class="row">
-                                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                                    <a href="#" class="mini-box">
-                                        <i><img src="assets/images/work-process-item-01.png" alt=""></i>
-                                        <strong>底層運作hardware</strong>
-                                        <span>Jetson Nano、android system</span>
-                                    </a>
-                                </div>
-                                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                                    <a href="#" class="mini-box">
-                                        <i><img src="assets/images/work-process-item-01.png" alt=""></i>
-                                        <strong>圖像預處理</strong>
-                                        <span>openCV詼諧運算、DVS動態視覺感測</span>
-                                    </a>
-                                </div>
-                                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                                    <a href="#" class="mini-box">
-                                        <i><img src="assets/images/work-process-item-01.png" alt=""></i>
-                                        <strong>取得穴位點</strong>
-                                        <span>mediapipe holistic model</span>
-                                    </a>
-                                </div>
-                                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                                    <a href="#" class="mini-box">
-                                        <i><img src="assets/images/work-process-item-01.png" alt=""></i>
-                                        <strong>資料分析</strong>
-                                        <span>動作指令(觸發事件、呼叫介面)<br>
-                                        顯示穴位(手部、頭部穴位)</span>
-                                    </a>
-                                </div>
-                                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                                    <a href="#" class="mini-box">
-                                        <i><img src="assets/images/work-process-item-01.png" alt=""></i>
-                                        <strong>前端互動</strong>
-                                        <span>手勢互動(選單呼叫、選擇控制)<br>
-                                        介面選擇(互動、問診模式)</span>
-                                    </a>
-                                </div>
-                                <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                                    <a href="#" class="mini-box">
-                                        <i><img src="assets/images/work-process-item-01.png" alt=""></i>
-                                        <strong>讀取資訊</strong>
-                                        <span>webcam、openCV</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- ***** Mini Box End ***** -->
-                        </div>
-                    </div>
-                </section>
-                <!-- ***** Home Parallax End ***** -->
-            
-                <!-- ***** Testimonials Start ***** -->
-
-                <!-- ***** Testimonials End ***** -->
-            
-                <!-- ***** Pricing Plans Start ***** -->
-                <section class="section colored" id="pricing-plans">
-                    <div class="container">
-                        <!-- ***** Section Title Start ***** -->
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="center-heading">
-                                    <h2 class="section-title">標題</h2>
-                                </div>
-                            </div>
-                            <div class="offset-lg-3 col-lg-6">
-                                <div class="center-text">
-                                    <p>註釋註釋註釋註釋註釋註釋註釋</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ***** Section Title End ***** -->
-            
-                        <div class="row">
-                            <!-- ***** Pricing Item Start ***** -->
-                            <div class="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
-                                <div class="pricing-item">
-                                    <div class="pricing-header">
-                                        <h3 class="pricing-title">東西</h3>
-                                    </div>
-                                    <div class="pricing-body">
-                                        <div class="price-wrapper">
-                                            <span class="currency">東西</span>
-                                            <span class="price">東西</span>
-                                            <span class="period">東西</span>
-                                        </div>
-                                        <ul class="list">
-                                            <li class="active">東西</li>
-                                            <li class="active">東西</li>
-                                            <li class="active">東西</li>
-                                            <li>東西</li>
-                                            <li>東西</li>
-                                            <li>東西</li>
-                                        </ul>
-                                    </div>
-                                    <div class="pricing-footer">
-                                        <a href="#" class="main-button">東西</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ***** Pricing Item End ***** -->
-            
-                            <!-- ***** Pricing Item Start ***** -->
-                            <div class="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
-                                <div class="pricing-item active">
-                                    <div class="pricing-header">
-                                        <h3 class="pricing-title">東西</h3>
-                                    </div>
-                                    <div class="pricing-body">
-                                        <div class="price-wrapper">
-                                            <span class="currency">東西</span>
-                                            <span class="price">東西</span>
-                                            <span class="period">東西</span>
-                                        </div>
-                                        <ul class="list">
-                                            <li class="active">東西</li>
-                                            <li class="active">1東西</li>
-                                            <li class="active">東西</li>
-                                            <li class="active">東西 東西</li>
-                                            <li>東西 東西</li>
-                                            <li> 東西</li>
-                                        </ul>
-                                    </div>
-                                    <div class="pricing-footer">
-                                        <a href="#" class="main-button">東西 東西</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ***** Pricing Item End ***** -->
-            
-                            <!-- ***** Pricing Item Start ***** -->
-                            <div class="col-lg-4 col-md-6 col-sm-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
-                                <div class="pricing-item">
-                                    <div class="pricing-header">
-                                        <h3 class="pricing-title">東西</h3>
-                                    </div>
-                                    <div class="pricing-body">
-                                        <div class="price-wrapper">
-                                            <span class="currency">東西</span>
-                                            <span class="price">東西東西</span>
-                                            <span class="period">東西</span>
-                                        </div>
-                                        <ul class="list">
-                                            <li class="active">東西 東西 東西</li>
-                                            <li class="active">東西 東西 東西</li>
-                                            <li class="active">東西 東西 東西</li>
-                                            <li class="active">15-東西 東西</li>
-                                            <li class="active">東西 東西</li>
-                                            <li class="active">東西 東西</li>
-                                        </ul>
-                                    </div>
-                                    <div class="pricing-footer">
-                                        <a href="#" class="main-button">東西</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ***** Pricing Item End ***** -->
-                        </div>
-                    </div>
-                </section>
-                <!-- ***** Pricing Plans End ***** -->
-            
-                <!-- ***** Counter Parallax Start ***** -->
-                <section class="counter">
-                    <div class="content">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-6 col-sm-12">
-                                    <div class="count-item decoration-bottom">
-                                        <strong>東西</strong>
-                                        <span>東西</span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-sm-12">
-                                    <div class="count-item decoration-top">
-                                        <strong>東西</strong>
-                                        <span>東西 </span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-sm-12">
-                                    <div class="count-item decoration-bottom">
-                                        <strong>東西</strong>
-                                        <span>東西 </span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-sm-12">
-                                    <div class="count-item">
-                                        <strong>東西</strong>
-                                        <span>東西</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- ***** Counter Parallax End ***** -->   
-            
-                <!-- ***** Blog Start ***** -->
-                <section class="section" id="blog">
-                    <div class="container">
-                        <!-- ***** Section Title Start ***** -->
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="center-heading">
-                                    <h2 class="section-title">大標題</h2>
-                                </div>
-                            </div>
-                            <div class="offset-lg-3 col-lg-6">
-                                <div class="center-text">
-                                    <p>註釋註釋註釋註釋註釋註釋註釋</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ***** Section Title End ***** -->
-            
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 col-sm-12">
-                                <div class="blog-post-thumb">
-                                    <div class="img">
-                                        <img src="assets/images/blog-item-01.png" alt="">
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3>
-                                            <a href="#">標題</a>
-                                        </h3>
-                                        <div class="text">
-                                            內容內容內容
-                                        </div>
-                                        <a href="#" class="main-button">更多更多</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12">
-                                <div class="blog-post-thumb">
-                                    <div class="img">
-                                        <img src="assets/images/blog-item-02.png" alt="">
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3>
-                                            <a href="#">標題</a>
-                                        </h3>
-                                        <div class="text">
-                                            內容內容內容
-                                        </div>
-                                        <a href="#" class="main-button">更多更多</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12">
-                                <div class="blog-post-thumb">
-                                    <div class="img">
-                                        <img src="assets/images/blog-item-03.png" alt="">
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3>
-                                            <a href="#">標題</a>
-                                        </h3>
-                                        <div class="text">
-                                            內容內容內容
-                                        </div>
-                                        <a href="#" class="main-button">更多更多</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- ***** Blog End ***** -->
-
-                <section class="section" id="teamates">
-                    <div class="container">
-                        <!-- ***** Section Title Start ***** -->
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="center-heading">
-                                    <h2 class="section-title">專題人員介紹</h2>
-                                </div>
-                            </div>
-                            <div class="offset-lg-3 col-lg-6">
-                                <div class="center-text">
-                                    <p>註釋註釋註釋註釋註釋註釋註釋</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ***** Section Title End ***** -->
-            
-                        <div class="row">
-                            <!-- ***** Testimonials Item Start ***** -->
-                            <div class="col-lg-4 col-md-6 col-sm-12">
-                                <div class="team-item">
-                                    <div class="team-content">
-                                        <i><img src="assets/images/testimonial-icon.png" alt=""></i>
-                                        <p>專題人員介紹</p>
-                                        <div class="user-image">
-                                            <img src="http://placehold.it/60x60" alt="">
-                                        </div>
-                                        <div class="team-info">
-                                            <h3 class="user-name">魏仲彥</h3>
-                                            <span>哪種工程師</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ***** Testimonials Item End ***** -->
-                            
-                            <!-- ***** Testimonials Item Start ***** -->
-                            <div class="col-lg-4 col-md-6 col-sm-12">
-                                <div class="team-item">
-                                    <div class="team-content">
-                                        <i><img src="assets/images/testimonial-icon.png" alt=""></i>
-                                        <p>專題人員介紹</p>
-                                        <div class="user-image">
-                                            <img src="http://placehold.it/60x60" alt="">
-                                        </div>
-                                        <div class="team-info">
-                                            <h3 class="user-name">徐柏元</h3>
-                                            <span>哪種工程師</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12">
-                                <div class="team-item">
-                                    <div class="team-content">
-                                        <i><img src="assets/images/testimonial-icon.png" alt=""></i>
-                                        <p>專長 : 寫筆記、重點整理
-                                            <br>
-                                            比賽經歷 : 2022InnoServe競賽
-                                            <br>
-                                            專題負責部分 : 
-                                             一小部分 : 美術元素、硬體測試、穴道知識查找
-                                             不是一小部分 : 影片製作、APP開發</p>
-                                             <p>聯絡信箱:<br>s110910540@student.nqu.edu.tw</p>
-                                        <div class="user-image">
-                                            <img src="/assets/images/汶娟.jpg" alt="汶娟">
-                                        </div>
-                                        <div class="team-info">
-                                            <h3 class="user-name">wen莊汶娟</h3>
-                                            <span>軟體工程師</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12">
-                                <div class="team-item">
-                                    <div class="team-content">
-                                        <i><img src="assets/images/testimonial-icon.png" alt=""></i>
-                                        <p>比賽經歷 2022InnoServe、UStar<br>
-                                            專題負責:美術、網站全端</p>
-                                        <p>聯絡信箱:<br>sunny1234860@gmail.com</p>
-                                        <p>Github:<br><a href="https://github.com/OohelloworldoO">https://github.com/OohelloworldoO</a></p>
-                                        <div class="user-image">
-                                            <img src="/assets/images/dragon_ball.png" alt="dragon_ball">
-                                        </div>
-                                        <div class="team-info">
-                                            <h3 class="user-name">Eric鄭智陽</h3>
-                                            <span>全端工程師(?)<br>開玩笑ㄉ我只是吉祥物</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ***** Testimonials Item End ***** -->
-                            
-                            <!-- ***** Testimonials Item Start ***** -->
-                            <div class="col-lg-4 col-md-6 col-sm-12">
-                                <div class="team-item">
-                                    <div class="team-content">
-                                        <i><img src="assets/images/testimonial-icon.png" alt=""></i>
-                                        <p>專題人員介紹</p>
-                                        <div class="user-image">
-                                            <img src="http://placehold.it/60x60" alt="">
-                                        </div>
-                                        <div class="team-info">
-                                            <h3 class="user-name">李偉德</h3>
-                                            <span>哪種工程師</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ***** Testimonials Item End ***** -->
-                        </div>
-                    </div>
-                </section>
-            
-                <!-- ***** Contact Us Start ***** -->
+                  </div>
+                  
+                  
                 <section class="section colored" id="feedback">
                     <div class="container">
                         <!-- ***** Section Title Start ***** -->
@@ -1083,7 +686,7 @@ body.dark .switch::before{
                                         </div>
                                         <div class="col-lg-6 col-md-12 col-sm-12">
                                           <fieldset>
-                                            <input name="email" type="email" class="form-control" id="email" placeholder="電子郵件" required="">
+                                            <input name="email" type="text" class="form-control" id="email" placeholder="電子郵件" required="">
                                           </fieldset>
                                         </div>
                                         <div class="col-lg-12">
@@ -1104,7 +707,6 @@ body.dark .switch::before{
                         </div>
                     </div>
                 </section>
-                <!-- ***** Contact Us End ***** -->
                 
                 <!-- ***** Footer Start ***** -->
                 <footer>
@@ -1183,7 +785,292 @@ page_top.addEventListener("click", () => {
     <script src="/assets/js/waypoints.min.js"></script>
     <script src="/assets/js/jquery.counterup.min.js"></script>
     <script src="/assets/js/imgfix.min.js"></script> 
-    
+
+
+<!-- chart.js-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+  <script>
+  	// const ctx = document.getElementById( "chart" ),
+  	// 	chart = new Chart(ctx, {
+  	// 		// 參數設定[註1]
+  	// 		type: "line", // 圖表類型
+    //         options:{
+    //             responsive: true,
+    //         legend:{
+    //             display :true
+    //         },
+    //         tooltips:{
+    //             enabled: true
+    //         },
+    //         scales:{
+    //             xAxes:[{
+    //                 display: true,
+    //             }],
+    //             yAxes:[{display: true}]
+    //         },
+    //         },
+
+            
+
+  			// data: {
+  				// labels: [ "4/1", "4/2", "4/3", "4/4", "4/5", "4/6", "4/7", "4/8", "4/9", "4/10", "4/11", "4/12" ], // 標題
+
+                //   datasets: [{
+  				// 	label: "中暑", // 標籤
+                //     lineTension: 0,
+                //     fill: false,
+                //     borderWidth: 5,
+  				// 	backgroundColor: [ // 背景色
+                //       'rgb(255, 99, 132)'
+  				// 	],
+                //       borderColor: 'rgba(255, 99, 132, 0.8)',
+                //     data: [20, 15, 14, 11, 2, 5, 4], // 資料
+                    
+                //     hidden: false,
+                //     id:"中暑"
+  				// },
+                // {
+  				// 	label: "頭痛", // 標籤
+                //     lineTension: 0,
+                //     fill: false,
+                //     borderWidth: 5,
+  				// 	backgroundColor: [ // 背景色
+                //       'rgb(0, 255, 0)'
+  				// 	],
+                //     borderColor: 'rgba(54, 162, 235, 0.8)',
+                //     data: [10, 15, 4, 2, 14, 20, 6],
+                    
+                //     hidden: true // show this dataset by default
+  				// },
+                // {
+  				// 	label: "口痛", // 標籤
+                //     lineTension: 0,
+                //     fill: false,
+                //     borderWidth: 5,
+  				// 	backgroundColor: [ // 背景色
+                //       'rgb(0 0 205)'
+  				// 	],
+                //     borderColor:'rgb(0 0 205)',
+                    
+                //     data: [3, 5, 6, 11, 14, 20, 1],
+  				// },
+                // {
+  				// 	label: "流行性感冒", // 標籤
+                //     lineTension: 0,
+                //     fill: false,
+                //     borderWidth: 5,
+  				// 	backgroundColor: [ // 背景色
+                //       'rgb(0, 0, 0)'
+  				// 	],
+                //     borderColor:'rgb(0, 0, 0)',
+                    
+                //     data: [ 30, 20, 40 , 30, 10, 40, 10], // 資料
+  				// },
+                //   {
+  				// 	label: "鼻塞", // 標籤
+                //     lineTension: 0,
+                //     fill: false,
+                //     borderWidth: 5,
+  				// 	backgroundColor: [ // 背景色
+                //       'rgb(255 248 220)'
+  				// 	],
+                //       borderColor: 'rgb(255 248 220)',
+                //     data: [23, 5, 20, 20, 30, 55, 24], // 資料
+                    
+                //     hidden: false
+  				// },
+                // {
+  				// 	label: "眩暈", // 標籤
+                //     lineTension: 0,
+                //     fill: false,
+                //     borderWidth: 5,
+  				// 	backgroundColor: [ // 背景色
+                //       'rgb(	70 130 180)'
+  				// 	],
+                //     borderColor: 'rgb(	70 130 180)',
+                //     data: [1, 14, 42, 12, 14, 26, 16],
+                    
+                //     hidden: true // show this dataset by default
+  				// },
+                // {
+  				// 	label: "感冒", // 標籤
+                //     lineTension: 0,
+                //     fill: false,
+                //     borderWidth: 5,
+  				// 	backgroundColor: [ // 背景色
+                //       'rgb(	102 205 170)'
+  				// 	],
+                //     borderColor:'rgb(	102 205 170)',
+                    
+                //     data: [13, 15, 26, 11, 14, 20, 11],
+  				// },
+                // {
+  				// 	label: "手指麻木", // 標籤
+                //     lineTension: 0,
+                //     fill: false,
+                //     borderWidth: 5,
+  				// 	backgroundColor: [ // 背景色
+                //       'rgb(154 205 50)'
+  				// 	],
+                //     borderColor:'rgb(154 205 50)',
+                    
+                //     data: [ 63, 22, 40 , 50, 60, 7, 53], // 資料
+  				// },
+                //   {
+  				// 	label: "失眠", // 標籤
+                //     lineTension: 0,
+                //     fill: false,
+                //     borderWidth: 5,
+  				// 	backgroundColor: [ // 背景色
+                //       'rgb(178 34 34)'
+  				// 	],
+                //       borderColor: 'rgb(178 34 34)',
+                //     data: [26, 70, 30, 22, 12, 35, 14], // 資料
+                    
+                //     hidden: false
+  				// },
+                // {
+  				// 	label: "疲勞乏力", // 標籤
+                //     lineTension: 0,
+                //     fill: false,
+                //     borderWidth: 5,
+  				// 	backgroundColor: [ // 背景色
+                //       'rgb(	139 137 137)'
+  				// 	],
+                //     borderColor: 'rgba(	139 137 137)',
+                //     data: [13, 16, 14, 22, 64, 10, 86],
+                    
+                //     hidden: true // show this dataset by default
+  				// },
+                // {
+  				// 	label: "食慾減退", // 標籤
+                //     lineTension: 0,
+                //     fill: false,
+                //     borderWidth: 5,
+  				// 	backgroundColor: [ // 背景色
+                //       'rgb(255 62 150)'
+  				// 	],
+                //     borderColor:'rgb(255 62 150)',
+                    
+                //     data: [43, 25, 16, 16, 14, 20, 91],
+  				// },
+                // {
+  				// 	label: "煩熱", // 標籤
+                //     lineTension: 0,
+                //     fill: false,
+                //     borderWidth: 5,
+  				// 	backgroundColor: [ // 背景色
+                //       'rgb(139 0 0)'
+  				// 	],
+                //     borderColor:'rgb(139 0 0)',
+                    
+                //     data: [ 10, 2, 40 , 10, 10, 20, 60], // 資料
+  				// }],
+        //         data:[
+        //             {id: '中暑', financials:
+        //             {
+        //                 4:{const: 10, salse:90, profit:100},
+        //                 5:{const: 10, salse:90, profit:100},
+        //                 6:{const: 10, salse:90, profit:100}
+        //             }}
+        //         ],
+        //         data:[
+        //             {id: '中暑', financials:
+        //             {
+        //                 4:{const: 10, salse:90, profit:100},
+        //                 5:{const: 10, salse:90, profit:100},
+        //                 6:{const: 10, salse:90, profit:100}
+        //             }}
+        //         ],
+  		// 	}
+  		// });
+  </script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+<script>
+    // setup 
+    const values = [
+        {date:'5/15', symptom:{ heatstroke:1500, Headache:3500, Mouthpain:2000 }},
+        {date:'5/16', symptom:{ heatstroke:1500, Headache:3500, Mouthpain:2000 }},
+        {date:'5/17', symptom:{ heatstroke:1500, Headache:3500, Mouthpain:2000 }},
+        {date:'5/18', symptom:{ heatstroke:4500, Headache:6000, Mouthpain:5000 }},
+        {date:'5/19', symptom:{ heatstroke:1500, Headache:3500, Mouthpain:2000 }},
+        {date:'5/20', symptom:{ heatstroke:4500, Headache:6000, Mouthpain:5000 }},
+        {date:'5/21', symptom:{ heatstroke:1500, Headache:3500, Mouthpain:2000 }},
+        {date:'5/22', symptom:{ heatstroke:4500, Headache:6000, Mouthpain:5000 }}
+    ]
+
+    async function fetchData(){
+        const url = '資料地址'
+        const response = await fetch(url)
+        const datapoints = await response.json()
+        return datapoints
+    }
+
+    const data = {
+      datasets: [{
+        label: 'Weekly Sales',
+        data:values,
+        backgroundColor: [
+          'rgba(255, 26, 104, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        borderWidth: 1,
+        parsing: {
+            xAxisKey: 'date',
+            yAxisKey: 'symptom.heatstroke',
+        }
+      }]
+    };
+
+    // config 
+    const config = {
+      type: 'line',
+      data,
+      options: {
+        plugins:{
+            legend:{
+                display:false
+            },
+        },
+        parsing: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+
+    // render init block
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+    function updateChart(){
+        var selectedValue = document.getElementById("idforValue").value
+        console.log(selectedValue)
+        myChart.data.datasets[0].parsing.yAxisKey = `symptom.${selectedValue}`
+        myChart.update();
+    }
+    // Instantly assign Chart.js version
+    // const chartVersion = document.getElementById('chartVersion');
+    // chartVersion.innerText = Chart.version;
+    </script>
+
     <!-- Global Init -->
     <script src="/assets/js/custom.js"></script>
 </body>

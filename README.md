@@ -5,7 +5,20 @@
 用於醫療紀錄以及使用者feedback(不知為啥css無法在github上連結到 但可在vs code運行成功)  
 遇到的問題:session無法rwd、isAuth無法正常運行、還有res.direct的問題(後來改用res.readfile直接傳就解決了)，但還是要設定最初讀取路徑等等  
 <br>
-<br>
+<br>  
+-----
+需要裝的套件:  
+<br>  
+bcrypt  
+express  
+expressflash  
+express-session  
+mongoose  
+passport  
+passport-local  
+chatjs-plugin-datalabels  
+<br>  
+------
 <br>
 ## 主要的參考資料如下:  
 做完後才發現用react、vue做前端好像更好，因為很多範例都不是用.html靜態網頁，導致前端跨到後端遇到很多問題，所以下次試著用這些寫網頁(如果還有下次的話

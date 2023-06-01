@@ -30,8 +30,8 @@
  
 ------
 
-##主要的參考資料如下:  
-做完後才發現用react、vue做前端好像更好，因為很多範例都不是用.html靜態網頁，導致前端跨到後端遇到很多問題，所以下次試著用這些寫網頁(如果還有下次的話
+主要的參考資料如下:  
+做完後才發現用react、vue做前端好像更好，因為很多範例都不是用html靜態網頁，導致前端跨到後端遇到很多問題，所以下次試著用這些寫網頁(如果還有下次的話
 像是前後端要互傳資料就讓我很頭大，早知道就用.ejs了  
  參考資料:https://webninjadeveloper.com/nodejs/node-js-express-session-based-authentication-system-using-express-session-cookie-parser-in-mongodb/  <br>
  參考資料:https://andyyou.github.io/2017/04/11/express-passport/  <br>

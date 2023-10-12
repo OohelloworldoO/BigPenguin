@@ -6,6 +6,7 @@
 用於醫療紀錄以及使用者feedback(不知為啥css無法在github上連結到 但可在vs code運行成功)  
 遇到的問題:session無法rwd、isAuth無法正常運行、還有res.direct的問題(後來改用res.readfile直接傳就解決了)，但還是要設定最初讀取路徑等等  
 
+未來在programming 要記得畫flowchart
 -----
 有安裝的套件:  
 

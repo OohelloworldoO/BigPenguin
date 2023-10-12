@@ -7,6 +7,7 @@
 遇到的問題:session無法rwd、isAuth無法正常運行、還有res.direct的問題(後來改用res.readfile直接傳就解決了)，但還是要設定最初讀取路徑等等  
 
 未來在programming 要記得畫flowchart
+
 -----
 有安裝的套件:  
 
